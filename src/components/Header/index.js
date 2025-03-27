@@ -1,7 +1,7 @@
 import React from 'react'
 import Logo from './Logo';
 import Link from 'next/link';
-import { LinkedinIcon } from '../Icons';
+import { DribbbleIcon, GithubIcon, LinkedinIcon, TwitterIcon } from '../Icons';
 
 const Header = () => {
   return (
@@ -15,9 +15,9 @@ const Header = () => {
         </nav>
         <div>
           <a href='#'><LinkedinIcon className={"inline-block w-6 h-6 mr-4"}/></a>
-          <a href='#'>Twitter</a>
-          <a href='#'>Github</a>
-          <a href='#'>Dribble</a>
+          <a href='#'><TwitterIcon className={"inline-block w-6 h-6 mr-4"}/></a>
+          <a href='#'><GithubIcon className={"inline-block w-6 h-6 mr-4"}/></a>
+          <a href='#'><DribbbleIcon className={"inline-block w-6 h-6 mr-4"}/></a>
         </div>
     </header>
   )
