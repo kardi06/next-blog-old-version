@@ -1,7 +1,7 @@
 import React from 'react'
 import Logo from './Logo';
 import Link from 'next/link';
-import { DribbbleIcon, GithubIcon, LinkedinIcon, TwitterIcon } from '../Icons';
+import { DribbbleIcon, GithubIcon, LinkedinIcon, SunIcon, TwitterIcon } from '../Icons';
 
 const Header = () => {
   return (
@@ -11,13 +11,13 @@ const Header = () => {
           <Link href="/" className='mr-2'>Home</Link>
           <Link href="/about" className='mr-2'>About</Link>
           <Link href="/contact" className='mr-2'>Contact</Link>
-          <button>T</button>
+          <button><SunIcon/></button>
         </nav>
         <div>
-          <a href='#'><LinkedinIcon className={"inline-block w-6 h-6 mr-4"}/></a>
-          <a href='#'><TwitterIcon className={"inline-block w-6 h-6 mr-4"}/></a>
-          <a href='#'><GithubIcon className={"inline-block w-6 h-6 mr-4"}/></a>
-          <a href='#'><DribbbleIcon className={"inline-block w-6 h-6 mr-4"}/></a>
+          <a href='#' className={"inline-block w-6 h-6 mr-4"}><LinkedinIcon className={"hover:scale-125 transition-all ease duration-300"}/></a>
+          <a href='#' className={"inline-block w-6 h-6 mr-4"}><TwitterIcon className={"hover:scale-125 transition-all ease duration-300"}/></a>
+          <a href='#' className={"inline-block w-6 h-6 mr-4"}><GithubIcon className={"hover:scale-125 transition-all ease duration-300"}/></a>
+          <a href='#' className={"inline-block w-6 h-6 mr-4"}><DribbbleIcon className={"hover:scale-125 transition-all ease duration-300"}/></a>
         </div>
     </header>
   )
