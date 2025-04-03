@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import {allDocs} from 'contentlayer/generated'
 
 export default function Home() {
   return (

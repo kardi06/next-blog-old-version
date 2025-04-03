@@ -11,7 +11,7 @@ const Blog = defineDocumentType(() => ({
             type: 'string',
             required: true,
         },
-        publishAt: {
+        publishedAt: {
             type: 'date',
             required: true,
         },
@@ -24,7 +24,7 @@ const Blog = defineDocumentType(() => ({
             required: true,
         },
         image: { 
-            type: string ,
+            type: "string" ,
             required: true, 
         },
         isPublished: {
