@@ -25,7 +25,9 @@ export default function BlogLayoutTwo({blog}) {
                         </span>
                     </h2>
                 </Link>
-                <span>{format(new Date(blog.publishedAt), 'dd MMMM yyyy')}</span>
+                <span className='capitalize text-dark/50 font-semibold text-base'>
+                    {format(new Date(blog.publishedAt), 'dd MMMM yyyy')}
+                </span>
             </div>
         </div>
     )
