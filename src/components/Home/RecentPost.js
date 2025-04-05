@@ -1,7 +1,6 @@
 import { sortBlog } from '@/src/utils'
 import React from 'react'
-import BlogLayoutOne from '../Blog/BlogLayoutOne';
-import BlogLayoutTwo from '../Blog/BlogLayoutTwo';
+import BlogLayoutThree from '../Blog/BlogLayoutThree';
 import Link from 'next/link';
 
 export default function RecentPost({blogs}) {
@@ -15,7 +14,7 @@ export default function RecentPost({blogs}) {
             <div className='grid grid-cols-3 grid-rows-3 gap-16 mt-16'>
                 {
                     sortedBlog.slice(5,11).map((blog, index) => {
-                        return <article className='col-span-1 row-span-1 relative' key={index}>blog-layout 3</article>
+                        return <article className='col-span-1 row-span-1 relative' key={index}><BlogLayoutThree blog={blog}/></article>
                     })
                 }
             </div>
