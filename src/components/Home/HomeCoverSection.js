@@ -7,7 +7,7 @@ import { Tag } from '../Elements/Tag';
 export default function HomeCoverSection({blogs}) {
     
     const sortedBlogs = sortBlog(blogs);
-    const blog = sortedBlogs[0];
+    const blog = sortedBlogs[3];
     
     return (
         <div className='w-full inline-block'>
@@ -23,8 +23,14 @@ export default function HomeCoverSection({blogs}) {
                 />
                 <div className='w-3/4 p-16 flex flex-col items-start justify-center z-0 text-light'>
                     <Tag link={`/categories/${blog.tags[0]}`} name={blog.tags[0]}/>
-                    <h1>{blog.title}</h1>
-                    <p>{blog.description}</p>
+                    <Link href={blog.url} className='mt-6'>
+                        <h1 className='font-bold capitalize text-4xl'>
+                            <span className='bg-gradient-to-r from-accent to-accent bg-[length:0px_6px] hover:bg-[length:100%_6px] bg-no-repeat transition-[background-size] duration-500 bg-left-bottom'>
+                                {blog.title}
+                            </span>
+                        </h1>
+                    </Link>
+                    <p className='inline-block mt-4 text-xl font-in'>{blog.description}</p>
                 </div>
             </article>    
         </div>
