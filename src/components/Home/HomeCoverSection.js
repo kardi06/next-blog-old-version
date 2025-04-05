@@ -1,6 +1,8 @@
 import { sortBlog } from '@/src/utils'
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react'
+import { Tag } from '../Elements/Tag';
 
 export default function HomeCoverSection({blogs}) {
     
@@ -19,6 +21,11 @@ export default function HomeCoverSection({blogs}) {
                     fill
                     className='h-full w-full object-center object-cover rounded-3xl -z-10'
                 />
+                <div className='w-3/4 p-16 flex flex-col items-start justify-center z-0 text-light'>
+                    <Tag link={`/categories/${blog.tags[0]}`} name={blog.tags[0]}/>
+                    <h1>{blog.title}</h1>
+                    <p>{blog.description}</p>
+                </div>
             </article>    
         </div>
     )
