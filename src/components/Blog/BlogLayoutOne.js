@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
-import { Tag } from '../Elements/Tag'
+import  Tag from '../Elements/Tag'
 import Link from 'next/link'
 
 export default function BlogLayoutOne({blog}) {

@@ -2,6 +2,8 @@ import React from 'react';
 import Tag from "@/src/components/Elements/Tag";
 import { allDocs } from "contentlayer/generated";
 import Image from 'next/image';
+import BlogDetails from '@/src/components/Blog/BlogDetails';
+import RenderMdx from '@/src/components/Blog/RenderMdx';
 
 export default function BlogPage({params}) {
     const blog = allDocs.find((blog) => blog._raw.flattenedPath === params.slug);
@@ -22,6 +24,12 @@ export default function BlogPage({params}) {
                         height={blog.image.height}
                         className='aspect-square w-full h-full object-center'
                     />
+            </div>
+            <BlogDetails blog={blog}/>
+
+            <div className="grid grid-cols-12 gap-16 mt-8 px-10">
+                <div className="col-span-4">TOC</div>
+                <RenderMdx blog={blog}/>
             </div>
         </article>
     )

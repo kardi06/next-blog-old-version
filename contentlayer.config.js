@@ -1,11 +1,13 @@
 // contentlayer.config.js
 
 import { makeSource, defineDocumentType } from '@contentlayer/source-files'
+import readingTime from 'reading-time'
 // import { description } from './project files/siteMetaData'
 
 const Blog = defineDocumentType(() => ({
     name: 'Doc',
     filePathPattern: '**/**/*.mdx',
+    contentType: 'mdx',
     fields: {
         title: {
             type: 'string',
@@ -42,8 +44,12 @@ const Blog = defineDocumentType(() => ({
     computedFields: {
         url: {
             type: 'string',
-            resolve: (doc) => `/blog/${doc._raw.flattenedPath}`,
-        }
+            resolve: (doc) => `/blogs/${doc._raw.flattenedPath}`,
+        },
+        readingTime: {
+            type: 'json',
+            resolve: (doc) => readingTime(doc.body.raw),
+        },
     }
 }))
 
