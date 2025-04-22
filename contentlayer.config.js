@@ -54,6 +54,12 @@ const Blog = defineDocumentType(() => ({
             type: 'json',
             resolve: (doc) => readingTime(doc.body.raw),
         },
+        toc:{
+            type: 'json',
+            resolve: async (doc) => {
+                return true;
+            },
+        }
     }
 }))
 
