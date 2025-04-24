@@ -28,7 +28,23 @@ export default function BlogPage({params}) {
             <BlogDetails blog={blog}/>
 
             <div className="grid grid-cols-12 gap-16 mt-8 px-10">
-                <div className="col-span-4">TOC</div>
+                <div className="col-span-4">
+                    <details>
+                        <summary className="font-semibold text-lg capitalize cursor-pointer">Table of Content</summary>
+                        <ul>
+                            {
+                                blog.toc.map((heading)=> {
+
+                                    return <li key={heading.slug}>
+                                        <a href={`#${heading.slug}`}>
+                                            <span>{heading.text}</span>
+                                        </a>
+                                    </li>
+                                })
+                            }
+                        </ul>
+                    </details>
+                </div>
                 <RenderMdx blog={blog}/>
             </div>
         </article>
