@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react'
 import  Tag  from '../Elements/Tag';
+import { slug } from 'github-slugger';
 
 export default function HomeCoverSection({blogs}) {
     
@@ -22,7 +23,7 @@ export default function HomeCoverSection({blogs}) {
                     className='h-full w-full object-center object-cover rounded-3xl -z-10'
                 />
                 <div className='w-3/4 p-16 flex flex-col items-start justify-center z-0 text-light'>
-                    <Tag link={`/categories/${blog.tags[0]}`} name={blog.tags[0]}/>
+                    <Tag link={`/categories/${slug(blog.tags[0])}`} name={blog.tags[0]}/>
                     <Link href={blog.url} className='mt-6'>
                         <h1 className='font-bold capitalize text-4xl'>
                             <span className='bg-gradient-to-r from-accent to-accent bg-[length:0px_6px] hover:bg-[length:100%_6px] bg-no-repeat transition-[background-size] duration-500 bg-left-bottom'>

@@ -4,6 +4,7 @@ import { allDocs } from "contentlayer/generated";
 import Image from 'next/image';
 import BlogDetails from '@/src/components/Blog/BlogDetails';
 import RenderMdx from '@/src/components/Blog/RenderMdx';
+import { slug } from 'github-slugger';
 
 export default function BlogPage({params}) {
     const blog = allDocs.find((blog) => blog._raw.flattenedPath === params.slug);
@@ -11,7 +12,7 @@ export default function BlogPage({params}) {
         <article>
             <div className="mb-8 text-center relative w-full h-[70vh] bg-dark">
                 <div className="w-full z-10 flex flex-col items-center justify-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                    <Tag link={`/categories/${blog.tags[0]}`} name={blog.tags[0]} className='px-6 text-sm py-2 !border'/>
+                    <Tag link={`/categories/${slug(blog.tags[0])}`} name={blog.tags[0]} className='px-6 text-sm py-2 !border'/>
                     <h1 className="inline-block mt-6 font-semibold capitalize text-light text-5xl leading-normal relative w-5/6">
                         {blog.title}
                     </h1>
