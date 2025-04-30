@@ -1,13 +1,15 @@
 import { allDocs } from "@/.contentlayer/generated";
 import BlogLayoutThree from "@/src/components/Blog/BlogLayoutThree";
 import Categories from "@/src/components/Blog/Categories";
-import { slug } from "github-slugger";
+import GithubSlugger,{ slug } from "github-slugger";
+
+const slugger = new GithubSlugger();
 
 export async function generateStaticParams() {
   const categories = [];
   const paths = [{ slug: "all" }];
 
-  allBlogs.map((blog) => {
+  allDocs.map((blog) => {
     if (blog.isPublished) {
       blog.tags.map((tag) => {
         let slugified = slugger.slug(tag);
