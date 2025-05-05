@@ -8,7 +8,7 @@ import { slug } from 'github-slugger';
 export default function HomeCoverSection({blogs}) {
     
     const sortedBlogs = sortBlog(blogs);
-    const blog = sortedBlogs[3];
+    const blog = sortedBlogs[0];
     
     return (
         <div className='w-full inline-block'>

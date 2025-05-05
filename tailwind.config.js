@@ -17,6 +17,15 @@ module.exports = {
       fontFamily: {
         mr: ["var(--font-mr)"],
         inter: ["var(--font-inter)"],
+      },
+      animation:{
+        roll: "roll 24s linear infinite",
+      },
+      keyframes:{
+        roll: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-300%)" },
+        },
       }
     },
   },
