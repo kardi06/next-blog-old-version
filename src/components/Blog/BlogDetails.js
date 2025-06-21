@@ -2,6 +2,7 @@ import { format, parseISO } from 'date-fns';
 import { slug } from 'github-slugger';
 import Link from 'next/link';
 import React from 'react'
+import ViewCounter from './ViewCounter';
 
 const BlogDetails = ({ blog, slug: blogSlug }) => {
     return (
@@ -11,7 +12,7 @@ const BlogDetails = ({ blog, slug: blogSlug }) => {
                 </time>
                 <span className="m-3">
                     {/* <ViewCounter slug={blogSlug} /> */}
-                    10
+                    <ViewCounter />
                 </span>
                 <div className="m-3">{blog.readingTime.text}</div>
                 <Link href={`/categories/${slug(blog.tags[0])}`} className="m-3">
