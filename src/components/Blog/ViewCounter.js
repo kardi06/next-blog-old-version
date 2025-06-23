@@ -2,8 +2,8 @@
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 import React, { useEffect, useState } from "react";
 
-const supabasex = createClientComponentClient();
-function ViewCounter({ slug, noCount = false, showCountr = true }) {
+const supabase = createClientComponentClient();
+function ViewCounter({ slug, noCount = false, showCount = true }) {
   const [views, setViews] = React.useState(0);
 
 	useEffect(() => {
