@@ -4,13 +4,13 @@ import React, { useEffect, useState } from "react";
 
 const supabase = createClientComponentClient();
 function ViewCounter({ slug, noCount = false, showCount = true }) {
-  const [views, setViews] = React.useState(0);
+  const [views, setViews] = useState(0);
 
 	useEffect(() => {
     const incrementView = async () => {
       try {
         let { error } = await supabase.rpc("increment", {
-          slug_text:slug ,
+          slug_text: slug ,
         });
 
         if (error){
@@ -54,7 +54,7 @@ function ViewCounter({ slug, noCount = false, showCount = true }) {
       }
     };
 
-        getViews();
+    getViews();
   }, [slug]);
 
 
