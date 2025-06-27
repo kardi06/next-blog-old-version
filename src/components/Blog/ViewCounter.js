@@ -9,7 +9,7 @@ function ViewCounter({ slug, noCount = false, showCount = true }) {
 	useEffect(() => {
     const incrementView = async () => {
       try {
-        let { error } = await supabase.rpc("increment", {
+        let { data, error } = await supabase.rpc("increment", {
           slug_text: slug ,
         });
 
