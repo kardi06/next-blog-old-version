@@ -6,7 +6,7 @@ import { format } from 'date-fns'
 
 export default function BlogLayoutTwo({blog}) {
     return (
-        <div className='group grid grid-cols-12 gap-4 items-center text-dark'>
+        <div className='group grid grid-cols-12 gap-4 items-center text-dark dark:text-light'>
             <Link href={blog.url} className='col-span-4 h-full rounded-xl overflow-hidden'>
                 <Image src={blog.image.filePath.replace("../public","")} 
                     alt={blog.title}
@@ -25,7 +25,7 @@ export default function BlogLayoutTwo({blog}) {
                         </span>
                     </h2>
                 </Link>
-                <span className='capitalize text-dark/50 font-semibold text-base'>
+                <span className='capitalize text-dark/50 dark:text-light/50 font-semibold text-base'>
                     {format(new Date(blog.publishedAt), 'dd MMMM yyyy')}
                 </span>
             </div>
